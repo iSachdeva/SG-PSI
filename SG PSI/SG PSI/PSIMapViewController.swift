@@ -36,8 +36,6 @@ class PSIMapViewController: UIViewController {
             if success {
                 self.psiResponse = response
                 self.placeAnnotations()
-                
-                print("Request Completed")
             } else {
                 print("ERROR: \(error.debugDescription)")
             }
@@ -69,8 +67,12 @@ extension PSIMapViewController:GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
         
         let customMarker = marker as! PlaceMarker
-        print(customMarker.region!)
-        return nil
+        if let infoView = UIView.viewFromNib(name: "PSIInfoView") as? PSIInfoView {
+            infoView.loadInfo(forRegion: customMarker.region!, psiDetail: self.psiResponse?.hourlyPSIDetail)
+            return infoView
+        } else {
+            return nil
+        }
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {

@@ -34,10 +34,30 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Reflection.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftKVC.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>21214A3A7708EFF350B39E51E46F652B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2F5622F3B18DF497981AB58C6D1FC72F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>614243851340F7AEE8B8FB8A2799D596</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,17 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A84593E730A0F9FC76ACA8A6BE05A04F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>A990465B71A7A7D9F271476F6F54D9E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C87DCF67FA0B768CE90FE90BC03FF2EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D4BB6C511713F37294B6A32E99CD0A47</key>
 		<dict>
 			<key>primary</key>
 			<true/>

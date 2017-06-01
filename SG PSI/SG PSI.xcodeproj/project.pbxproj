@@ -20,6 +20,10 @@
 		28E5C4801EE040010056A765 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5C47F1EE040010056A765 /* NetworkConnection.swift */; };
 		28E5C4831EE049900056A765 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5C4821EE049900056A765 /* DateExtension.swift */; };
 		28E5C4891EE04EA80056A765 /* PlaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5C4881EE04EA80056A765 /* PlaceMarker.swift */; };
+		28E5C48C1EE05E5D0056A765 /* PSIInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5C48A1EE05E5D0056A765 /* PSIInfoView.swift */; };
+		28E5C48D1EE05E5D0056A765 /* PSIInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28E5C48B1EE05E5D0056A765 /* PSIInfoView.xib */; };
+		28E5C4921EE05F5F0056A765 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5C4911EE05F5F0056A765 /* UIViewExtension.swift */; };
+		28E5C4941EE060190056A765 /* FloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5C4931EE060190056A765 /* FloatExtension.swift */; };
 		96F821089A5632E8C21C4E8E /* Pods_SG_PSIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E2B1B067DD064051A27C82 /* Pods_SG_PSIUITests.framework */; };
 		C20201A03C8C0FF2E47306C8 /* Pods_SG_PSI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93E4395BA39807AA5307736 /* Pods_SG_PSI.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +65,10 @@
 		28E5C47F1EE040010056A765 /* NetworkConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 		28E5C4821EE049900056A765 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		28E5C4881EE04EA80056A765 /* PlaceMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceMarker.swift; sourceTree = "<group>"; };
+		28E5C48A1EE05E5D0056A765 /* PSIInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSIInfoView.swift; sourceTree = "<group>"; };
+		28E5C48B1EE05E5D0056A765 /* PSIInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSIInfoView.xib; sourceTree = "<group>"; };
+		28E5C4911EE05F5F0056A765 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		28E5C4931EE060190056A765 /* FloatExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatExtension.swift; sourceTree = "<group>"; };
 		2BE8EF5D0D25B02DF852B9A5 /* Pods-SG PSI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SG PSI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SG PSI/Pods-SG PSI.debug.xcconfig"; sourceTree = "<group>"; };
 		696F38D16C00B11B2758F94D /* Pods-SG PSITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SG PSITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SG PSITests/Pods-SG PSITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7E934F5C66F5636EA2D810D9 /* Pods-SG PSIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SG PSIUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SG PSIUITests/Pods-SG PSIUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,8 +174,9 @@
 		28E5C4741EE018E60056A765 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				28E5C4471EE00B690056A765 /* Main.storyboard */,
-				28E5C44C1EE00B690056A765 /* LaunchScreen.storyboard */,
+				28E5C48F1EE05E760056A765 /* LaunchScreen */,
+				28E5C48E1EE05E6B0056A765 /* Storyboard */,
+				28E5C4901EE05E7E0056A765 /* PSIInfoView */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -209,8 +218,35 @@
 			isa = PBXGroup;
 			children = (
 				28E5C4821EE049900056A765 /* DateExtension.swift */,
+				28E5C4911EE05F5F0056A765 /* UIViewExtension.swift */,
+				28E5C4931EE060190056A765 /* FloatExtension.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		28E5C48E1EE05E6B0056A765 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				28E5C4471EE00B690056A765 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		28E5C48F1EE05E760056A765 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				28E5C44C1EE00B690056A765 /* LaunchScreen.storyboard */,
+			);
+			name = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		28E5C4901EE05E7E0056A765 /* PSIInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				28E5C48B1EE05E5D0056A765 /* PSIInfoView.xib */,
+				28E5C48A1EE05E5D0056A765 /* PSIInfoView.swift */,
+			);
+			name = PSIInfoView;
 			sourceTree = "<group>";
 		};
 		56EC28A4ECB0967FA3D78BAE /* Pods */ = {
@@ -358,6 +394,7 @@
 				28E5C44E1EE00B690056A765 /* LaunchScreen.storyboard in Resources */,
 				28E5C44B1EE00B690056A765 /* Assets.xcassets in Resources */,
 				28E5C4491EE00B690056A765 /* Main.storyboard in Resources */,
+				28E5C48D1EE05E5D0056A765 /* PSIInfoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,7 +563,10 @@
 				28E5C4441EE00B690056A765 /* AppDelegate.swift in Sources */,
 				28E5C4801EE040010056A765 /* NetworkConnection.swift in Sources */,
 				28E5C4791EE01ACB0056A765 /* Constants.swift in Sources */,
+				28E5C4921EE05F5F0056A765 /* UIViewExtension.swift in Sources */,
 				28E5C47D1EE03F380056A765 /* PSIResponse.swift in Sources */,
+				28E5C4941EE060190056A765 /* FloatExtension.swift in Sources */,
+				28E5C48C1EE05E5D0056A765 /* PSIInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

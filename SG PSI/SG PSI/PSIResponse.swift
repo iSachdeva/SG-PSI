@@ -8,6 +8,7 @@
 
 import Foundation
 import ObjectMapper
+import SwiftKVC
 
 class PSIResponse:Mappable {
     
@@ -122,14 +123,14 @@ class Reading:Mappable {
     }
 }
 
-class Region:Mappable {
+class Region:Object,Mappable {
     
-    var east:Float?
-    var central:Float?
-    var south:Float?
-    var north:Float?
-    var west:Float?
-    var national:Float?
+    var east:String?
+    var central:String?
+    var south:String?
+    var north:String?
+    var west:String?
+    var national:String?
     
     required init?(map: Map){
         
@@ -137,11 +138,11 @@ class Region:Mappable {
     
     func mapping(map: Map) {
         
-        self.east <- map["east"]
-        self.central <- map["central"]
-        self.south <- map["south"]
-        self.north <- map["north"]
-        self.west <- map["west"]
-        self.national <- map["national"]
+        self.east <- (map["east"], TransformOf<String, Float>(fromJSON: {  $0?.stringValue }, toJSON: { $0.map { Float($0)! } }))
+        self.central <- (map["central"], TransformOf<String, Float>(fromJSON: {  $0?.stringValue }, toJSON: { $0.map { Float($0)! } }))
+        self.south <- (map["south"], TransformOf<String, Float>(fromJSON: {  $0?.stringValue }, toJSON: { $0.map { Float($0)! } }))
+        self.north <- (map["north"], TransformOf<String, Float>(fromJSON: {  $0?.stringValue }, toJSON: { $0.map { Float($0)! } }))
+        self.west <- (map["west"], TransformOf<String, Float>(fromJSON: {  $0?.stringValue }, toJSON: { $0.map { Float($0)! } }))
+        self.national <- (map["national"], TransformOf<String, Float>(fromJSON: {  $0?.stringValue }, toJSON: { $0.map { Float($0)! } }))
     }
 }

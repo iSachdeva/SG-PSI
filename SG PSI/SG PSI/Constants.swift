@@ -29,4 +29,10 @@ struct Constant {
     struct Format {
         static let ISODate = "yyyy-MM-dd'T'HH:mm:ssZZZ"
     }
+    
+    struct  ImageName {
+        static let regionMarker = "locationPin"
+        
+        
+    }
 }

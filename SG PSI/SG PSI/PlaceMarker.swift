@@ -31,7 +31,7 @@ class PlaceMarker:GMSMarker {
             self.position = location
         }
         
-        self.icon = UIImage(named: "locationPin")
+        self.icon = UIImage(named: Constant.ImageName.regionMarker)
         self.appearAnimation = GMSMarkerAnimation.pop
     }
 }
