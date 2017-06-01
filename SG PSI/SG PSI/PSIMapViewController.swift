@@ -19,7 +19,9 @@ class PSIMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.startLoadPSI(date: "2017-06-01T20:03:38+0800")
+        let dateNow = Date().toString(format: Constant.Format.ISODate)
+
+        self.startLoadPSI(date: dateNow)
        
         let camera: GMSCameraPosition = GMSCameraPosition.camera(withLatitude: Constant.MapCamera.defaultLatitude, longitude: Constant.MapCamera.defaultLongitude, zoom: Constant.MapCamera.defaultZoom)
         
@@ -33,6 +35,7 @@ class PSIMapViewController: UIViewController {
             [unowned self] (success:Bool,response:PSIResponse?,error:Error?) in
             if success {
                 self.psiResponse = response
+                self.placeAnnotations()
                 
                 print("Request Completed")
             } else {
@@ -40,12 +43,41 @@ class PSIMapViewController: UIViewController {
             }
         })
     }
-
     
+    //MARK:-  Map view
+    func placeAnnotations() {
+        
+        guard let response = self.psiResponse,let regions = response.regionMetaData else  {
+            return
+        }
+        
+        for aRegion in regions {
+            let aPin = PlaceMarker(place: aRegion)
+            aPin.map = self.mapView
+        }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
 
+extension PSIMapViewController:GMSMapViewDelegate {
+    
+    //MARK: Map view delegates
+    func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
+        
+        let customMarker = marker as! PlaceMarker
+        print(customMarker.region!)
+        return nil
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        return false
+    }
+    
+    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+        return nil
+    }
 }

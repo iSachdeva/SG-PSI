@@ -25,4 +25,8 @@ struct Constant {
         static let baseUrl = "https://api.data.gov.sg/"
         static let psi = "v1/environment/psi"
     }
+    
+    struct Format {
+        static let ISODate = "yyyy-MM-dd'T'HH:mm:ssZZZ"
+    }
 }

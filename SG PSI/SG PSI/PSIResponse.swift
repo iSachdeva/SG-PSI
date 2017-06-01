@@ -41,7 +41,6 @@ class Status:Mappable {
 
 class RegionMetaData:Mappable {
     
-    var id:String?
     var name:String?
     var location:Location?
     
@@ -50,7 +49,7 @@ class RegionMetaData:Mappable {
     }
     
     func mapping(map: Map) {
-        self.id = UUID().uuidString
+
         self.name <- map["name"]
         self.location <- map["label_location"]
     }

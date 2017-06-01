@@ -18,6 +18,8 @@
 		28E5C4791EE01ACB0056A765 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5C4781EE01ACB0056A765 /* Constants.swift */; };
 		28E5C47D1EE03F380056A765 /* PSIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5C47C1EE03F380056A765 /* PSIResponse.swift */; };
 		28E5C4801EE040010056A765 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5C47F1EE040010056A765 /* NetworkConnection.swift */; };
+		28E5C4831EE049900056A765 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5C4821EE049900056A765 /* DateExtension.swift */; };
+		28E5C4891EE04EA80056A765 /* PlaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E5C4881EE04EA80056A765 /* PlaceMarker.swift */; };
 		96F821089A5632E8C21C4E8E /* Pods_SG_PSIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E2B1B067DD064051A27C82 /* Pods_SG_PSIUITests.framework */; };
 		C20201A03C8C0FF2E47306C8 /* Pods_SG_PSI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93E4395BA39807AA5307736 /* Pods_SG_PSI.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +59,8 @@
 		28E5C4781EE01ACB0056A765 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		28E5C47C1EE03F380056A765 /* PSIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSIResponse.swift; sourceTree = "<group>"; };
 		28E5C47F1EE040010056A765 /* NetworkConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
+		28E5C4821EE049900056A765 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		28E5C4881EE04EA80056A765 /* PlaceMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceMarker.swift; sourceTree = "<group>"; };
 		2BE8EF5D0D25B02DF852B9A5 /* Pods-SG PSI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SG PSI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SG PSI/Pods-SG PSI.debug.xcconfig"; sourceTree = "<group>"; };
 		696F38D16C00B11B2758F94D /* Pods-SG PSITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SG PSITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SG PSITests/Pods-SG PSITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7E934F5C66F5636EA2D810D9 /* Pods-SG PSIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SG PSIUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SG PSIUITests/Pods-SG PSIUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 				28E5C47B1EE03EE90056A765 /* Model */,
 				28E5C47A1EE01B510056A765 /* ViewController */,
 				28E5C4751EE01A870056A765 /* Constants */,
+				28E5C4811EE0497F0056A765 /* Extensions */,
 				28E5C4741EE018E60056A765 /* View */,
 				28E5C47E1EE03FBA0056A765 /* Network */,
 				28E5C44A1EE00B690056A765 /* Assets.xcassets */,
@@ -187,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				28E5C47C1EE03F380056A765 /* PSIResponse.swift */,
+				28E5C4881EE04EA80056A765 /* PlaceMarker.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -197,6 +203,14 @@
 				28E5C47F1EE040010056A765 /* NetworkConnection.swift */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		28E5C4811EE0497F0056A765 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				28E5C4821EE049900056A765 /* DateExtension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		56EC28A4ECB0967FA3D78BAE /* Pods */ = {
@@ -507,6 +521,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				28E5C4731EE0166E0056A765 /* PSIMapViewController.swift in Sources */,
+				28E5C4831EE049900056A765 /* DateExtension.swift in Sources */,
+				28E5C4891EE04EA80056A765 /* PlaceMarker.swift in Sources */,
 				28E5C4441EE00B690056A765 /* AppDelegate.swift in Sources */,
 				28E5C4801EE040010056A765 /* NetworkConnection.swift in Sources */,
 				28E5C4791EE01ACB0056A765 /* Constants.swift in Sources */,
