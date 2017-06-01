@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class PSIMapViewController: UIViewController {
 
+    @IBOutlet weak var mapView: GMSMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let camera: GMSCameraPosition = GMSCameraPosition.camera(withLatitude: 1.352083, longitude: 103.819836, zoom: 10.0)
+        self.mapView.camera = camera
     }
 
     override func didReceiveMemoryWarning() {

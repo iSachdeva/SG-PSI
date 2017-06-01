@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +13,7 @@
         <scene sceneID="fFj-fN-dTW">
             <objects>
                 <navigationController id="Shz-Wv-56O" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ADT-GX-sQy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ADT-GX-sQy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -24,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-714" y="188"/>
         </scene>
-        <!--PSI Map-->
+        <!--Delegate-->
         <scene sceneID="SUJ-qo-TMW">
             <objects>
-                <viewController id="Ng0-I0-Lqp" sceneMemberID="viewController">
+                <viewController id="Ng0-I0-Lqp" customClass="PSIMapViewController" customModule="SG_PSI" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UGg-wO-b5h"/>
                         <viewControllerLayoutGuide type="bottom" id="t0x-Ws-ORT"/>
@@ -35,13 +36,31 @@
                     <view key="view" contentMode="scaleToFill" id="GwE-pG-Fsh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4x-ns-kE1" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ng0-I0-Lqp" id="2ft-l7-OD8"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y4x-ns-kE1" firstAttribute="centerY" secondItem="GwE-pG-Fsh" secondAttribute="centerY" id="ESD-Eq-hlk"/>
+                            <constraint firstItem="Y4x-ns-kE1" firstAttribute="width" secondItem="GwE-pG-Fsh" secondAttribute="width" id="bcK-7x-BM9"/>
+                            <constraint firstItem="Y4x-ns-kE1" firstAttribute="height" secondItem="GwE-pG-Fsh" secondAttribute="height" id="fJI-Mg-0r0"/>
+                            <constraint firstItem="Y4x-ns-kE1" firstAttribute="centerX" secondItem="GwE-pG-Fsh" secondAttribute="centerX" id="xSS-1q-WRu"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="PSI Map" id="tVq-LV-mgT"/>
+                    <connections>
+                        <outlet property="mapView" destination="Y4x-ns-kE1" id="3tl-I7-RgK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5W3-Gg-qFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="87" y="188"/>
+            <point key="canvasLocation" x="85.599999999999994" y="187.55622188905548"/>
         </scene>
     </scenes>
 </document>
