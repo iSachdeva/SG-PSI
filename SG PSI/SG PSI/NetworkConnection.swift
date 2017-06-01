@@ -38,7 +38,7 @@ class NetworkConnection {
         Alamofire.request(url, method: .get, parameters: postParameters, encoding: URLEncoding.default, headers: self.header).responseObject { (response:DataResponse<PSIResponse>) in
             
             switch(response.result) {
-            case .success(_):
+            case .success:
                 if let psiResponse = response.result.value {
                     DispatchQueue.main.async {
                         completetioHandler(true,psiResponse,nil)
@@ -46,7 +46,7 @@ class NetworkConnection {
                 }
                 break
                 
-            case .failure(_):
+            case .failure:
                 DispatchQueue.main.async {
                     completetioHandler(false,response.result.value,response.error)
                 }
