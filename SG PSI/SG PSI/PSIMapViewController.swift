@@ -27,19 +27,42 @@ class PSIMapViewController: UIViewController {
         
         self.mapView.camera = camera
     }
+    
+    //MARK: IBActions
+    @IBAction func refresh(button:UIButton) {
+        self.mapView.clear()
+        
+        let date = Date().toString(format: Constant.Format.ISODate)
+        self.startLoadPSI(date: date)
+    }
 
     //MARK:- Network call
-    func startLoadPSI(date:String) {
+    private func startLoadPSI(date:String) {
+        
+        self.showActivityLoader()
         
         self.networkConnection.getPSIIndex(time: date, completetioHandler: {
             [unowned self] (success:Bool,response:PSIResponse?,error:Error?) in
             if success {
                 self.psiResponse = response
                 self.placeAnnotations()
+                
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(PSIMapViewController.refresh(button:)))
+
             } else {
-                print("ERROR: \(error.debugDescription)")
+                Alert(title: "Error", message: (error?.localizedDescription)!).show(withButtons: ["OK":.default], completetionHandler: {
+                    (index:Int,title:String) in
+                })
             }
         })
+    }
+    
+    private func showActivityLoader() {
+    
+        let activityIndictor = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activityIndictor.hidesWhenStopped = true
+        activityIndictor.startAnimating()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: activityIndictor)
     }
     
     //MARK:-  Map view

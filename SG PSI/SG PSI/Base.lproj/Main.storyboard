@@ -53,7 +53,11 @@
                             <constraint firstItem="Y4x-ns-kE1" firstAttribute="centerX" secondItem="GwE-pG-Fsh" secondAttribute="centerX" id="xSS-1q-WRu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="PSI Map" id="tVq-LV-mgT"/>
+                    <navigationItem key="navigationItem" title="PSI" id="H2C-sP-8cA">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="Fty-GA-cGp">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="Y4x-ns-kE1" id="3tl-I7-RgK"/>
                     </connections>
