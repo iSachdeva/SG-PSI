@@ -43,17 +43,18 @@ class PSIMapViewController: UIViewController {
         
         self.networkConnection.getPSIIndex(time: date, completetioHandler: {
             [unowned self] (success:Bool,response:PSIResponse?,error:Error?) in
+           
             if success {
                 self.psiResponse = response
                 self.placeAnnotations()
-                
-                self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(PSIMapViewController.refresh(button:)))
-
             } else {
                 Alert(title: "Error", message: (error?.localizedDescription)!).show(withButtons: ["OK":.default], completetionHandler: {
                     (index:Int,title:String) in
                 })
             }
+            
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(PSIMapViewController.refresh(button:)))
+
         })
     }
     

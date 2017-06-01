@@ -13,7 +13,7 @@ struct Constant {
     struct MapCamera {
         static let defaultLatitude = 1.352083
         static let defaultLongitude = 103.819836
-        static let defaultZoom = Float(10.0)
+        static let defaultZoom = Float(11.0)
     }
     
     struct PrivateKey {
