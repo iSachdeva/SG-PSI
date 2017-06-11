@@ -28,9 +28,13 @@ class SG_PSIUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testMapRefresh() {
+       
+        let app = XCUIApplication()
+        let refreshButton = app.navigationBars["PSI"].buttons["Refresh"]
+        refreshButton.tap()
+        refreshButton.tap()
+        refreshButton.tap()
     }
     
 }

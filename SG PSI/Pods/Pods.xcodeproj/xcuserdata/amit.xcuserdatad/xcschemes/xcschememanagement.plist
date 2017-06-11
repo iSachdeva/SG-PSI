@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Nimble.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -34,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Quick.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Reflection.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,17 +57,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>21214A3A7708EFF350B39E51E46F652B</key>
+		<key>2F54470DA5791F891C0DF80F391CE0B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>2F5622F3B18DF497981AB58C6D1FC72F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>614243851340F7AEE8B8FB8A2799D596</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +82,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B74040B68E69BD5CB0208C3032C7A135</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C87DCF67FA0B768CE90FE90BC03FF2EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D4BB6C511713F37294B6A32E99CD0A47</key>
+		<key>D966DE633C527D5E2DA67E2706E0F56A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD7C8BF89FE8053D0A2A2D88BB49CF07</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E37F5BF11AD7B4034A9151E2F6E0D707</key>
 		<dict>
 			<key>primary</key>
 			<true/>

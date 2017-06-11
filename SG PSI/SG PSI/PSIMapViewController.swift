@@ -13,7 +13,6 @@ class PSIMapViewController: UIViewController {
 
     @IBOutlet weak var mapView: GMSMapView!
     
-    let networkConnection = NetworkConnection.shared
     var psiResponse:PSIResponse?
 
     override func viewDidLoad() {
@@ -41,7 +40,7 @@ class PSIMapViewController: UIViewController {
         
         self.showActivityLoader()
         
-        self.networkConnection.getPSIIndex(time: date, completetioHandler: {
+        NetworkConnection.shared.getPSIIndex(time: date, completetioHandler: {
             [unowned self] (success:Bool,response:PSIResponse?,error:Error?) in
            
             if success {
@@ -53,9 +52,12 @@ class PSIMapViewController: UIViewController {
                 })
             }
             
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(PSIMapViewController.refresh(button:)))
-
+            self.showRefreshButton()
         })
+    }
+    
+    private func showRefreshButton() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(PSIMapViewController.refresh(button:)))
     }
     
     private func showActivityLoader() {
@@ -91,7 +93,7 @@ extension PSIMapViewController:GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, markerInfoContents marker: GMSMarker) -> UIView? {
         
         let customMarker = marker as! PlaceMarker
-        if let infoView = UIView.viewFromNib(name: "PSIInfoView") as? PSIInfoView {
+        if let infoView = UIView.viewFromNib(name: Constant.XibName.psiInfo) as? PSIInfoView {
             infoView.loadInfo(forRegion: customMarker.region!, psiDetail: self.psiResponse?.hourlyPSIDetail)
             return infoView
         } else {

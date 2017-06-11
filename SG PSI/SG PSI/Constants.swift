@@ -32,7 +32,9 @@ struct Constant {
     
     struct  ImageName {
         static let regionMarker = "locationPin"
-        
-        
+    }
+    
+    struct XibName {
+        static let psiInfo = "PSIInfoView"
     }
 }

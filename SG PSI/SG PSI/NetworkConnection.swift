@@ -35,22 +35,21 @@ class NetworkConnection {
         let url = Constant.URL.baseUrl + Constant.URL.psi
         let postParameters = ["date_time":time]
         
-        Alamofire.request(url, method: .get, parameters: postParameters, encoding: URLEncoding.default, headers: self.header).responseObject { (response:DataResponse<PSIResponse>) in
-            
-            switch(response.result) {
-            case .success:
-                if let psiResponse = response.result.value {
-                    DispatchQueue.main.async {
+        Alamofire.request(url, method: .get, parameters: postParameters, encoding: URLEncoding.default, headers: self.header).validate().responseObject { (response:DataResponse<PSIResponse>) in
+         
+            DispatchQueue.main.async {
+                
+                switch(response.result) {
+                case .success:
+                    if let psiResponse = response.result.value {
                         completetioHandler(true,psiResponse,nil)
                     }
-                }
-                break
-                
-            case .failure:
-                DispatchQueue.main.async {
+                    break
+                    
+                case .failure:
                     completetioHandler(false,response.result.value,response.error)
+                    break
                 }
-                break
             }
         }
     }

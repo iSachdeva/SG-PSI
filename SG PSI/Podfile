@@ -11,6 +11,8 @@ target 'SG PSI' do
   pod 'AlamofireObjectMapper', '~> 4.0'
   pod 'GoogleMaps'
   pod 'SwiftKVC'
+  pod 'Quick'
+  pod 'Nimble'
 
   target 'SG PSITests' do
     inherit! :search_paths
